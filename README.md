@@ -14,19 +14,19 @@ All content is fetched from the Node API, which means nothing is hard coded. Eve
 
 ## Folder Structure
 
-frontend/
-src/
-components/
-ProjectCard.jsx
-pages/
-Home.jsx
-ProjectDetail.jsx
-router/
-index.jsx
-api/
-index.js
-App.jsx
-main.jsx
+- frontend/
+  - src/
+    - components/
+      - ProjectCard.jsx
+    - pages/
+      - Home.jsx
+      - ProjectDetail.jsx
+    - router/
+      - index.jsx
+    - api/
+      - index.js
+    - App.jsx
+    - main.jsx
 
 This structure keeps components, pages, routing, and API calls separate and easy to follow.
 
