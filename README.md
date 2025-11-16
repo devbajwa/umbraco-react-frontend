@@ -1,16 +1,57 @@
-# React + Vite
+# Umbraco React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React application serves as the frontend for the headless Umbraco project. It renders content that is fetched from the Node API. The frontend is a simple and clean project written with React, Tailwind CSS, and React Router.
 
-Currently, two official plugins are available:
+## About This Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application displays:
 
-## React Compiler
+- Home Page content (title, subtitle, hero section)
+- A grid of projects
+- Individual project detail pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All content is fetched from the Node API, which means nothing is hard coded. Everything is fully driven by the CMS.
 
-## Expanding the ESLint configuration
+## Folder Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+frontend/
+src/
+components/
+ProjectCard.jsx
+pages/
+Home.jsx
+ProjectDetail.jsx
+router/
+index.jsx
+api/
+index.js
+App.jsx
+main.jsx
+
+This structure keeps components, pages, routing, and API calls separate and easy to follow.
+
+## How The App Works
+
+1. The app starts by calling the Node API.
+2. It fetches both the home content and the list of projects.
+3. Project tiles on the home page link to individual detail pages.
+4. Each slug is matched through React Router.
+5. The app displays images, HTML markup, and metadata that came from the CMS.
+
+## How To Run Locally
+
+1. Install dependencies:
+   `npm install`
+2. Create a `.env` file with:
+   `VITE_API_BASE=http://localhost:4000`
+3. Start the development server:
+   `npm run dev`
+4. The frontend will be available at:
+   `http://localhost:5173`
+
+## Version Info
+
+- React 18
+- React Router
+- Tailwind CSS
+- Vite
